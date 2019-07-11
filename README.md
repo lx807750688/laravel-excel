@@ -1,4 +1,4 @@
-# laravel-excel-
+# laravel-excel
 laravel Excel V3.1 导入导出方法说明
 ## 介绍
 LaravelExcel 旨在成为 Laravel 风格的 PhpSpreadsheet：围绕 PhpSpreadsheet 的简单但优雅的包装，其目标是简化导出和导入。
