@@ -83,6 +83,7 @@ public function Export(){
 //创建导入类
 
 namespace Excel;
+
 use App\User; //user model 可以自行替换
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
