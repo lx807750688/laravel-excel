@@ -88,6 +88,7 @@ use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 class UsersImport implements ToCollection
 {
+
     public function collection(Collection $rows)
     {
         foreach ($rows as $row)  //循序 excel内容
