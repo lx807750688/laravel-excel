@@ -7,7 +7,7 @@ LaravelExcel 旨在成为 Laravel 风格的 PhpSpreadsheet：围绕 PhpSpreadshe
 ## 安装
 composer require maatwebsite/excel
 
-[添加 ServiceProvider config/app.php]
+1. 添加 ServiceProvider config/app.php
 
 'providers' => [
      /*
@@ -16,14 +16,14 @@ composer require maatwebsite/excel
      Maatwebsite\Excel\ExcelServiceProvider::class,
 ];
 
-[添加 Facade in config/app.php]
+2. 添加 Facade in config/app.php
 
 'aliases' => [
     ...
     'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 ];
 
-[发布配置]
+3. 发布配置
 
 php artisan vendor:publish
 
