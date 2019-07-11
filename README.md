@@ -8,28 +8,34 @@ LaravelExcel 旨在成为 Laravel 风格的 PhpSpreadsheet：围绕 PhpSpreadshe
 composer require maatwebsite/excel
 
 //添加 ServiceProvider config/app.php
+
 'providers' => [
      /*
       * Package Service Providers...
       */
      Maatwebsite\Excel\ExcelServiceProvider::class,
-]
+];
 
 //添加 Facade in config/app.php
+
 'aliases' => [
     ...
     'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-]
+];
 
 //发布配置
+
 php artisan vendor:publish
 
 4，导出类用法
+
 //创建导出类
+
 namespace Excel;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\WithHeadings;
+
 class UsersExport implements FromCollection, WithHeadings
 {
 
@@ -100,10 +106,12 @@ class UsersImport implements ToCollection
 
 use Excel\UsersImport; //引用导入类
 use Maatwebsite\Excel\Facades\Excel;
+
     public function Import(){
     return Excel::import(new UsersImport, request()->file('your_file')); //此方法自动调导入类 collection 方法, file后面接全路径
     return $array = Excel::toArray(new UsersImport, 'users.xlsx');  //此方法将excel内容转换为数组输出。
    } 
+   
 //更多方法请查看官网地址
 
 //具体使用方法请查看官网地址 https://laravel-excel.com/
