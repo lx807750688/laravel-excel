@@ -29,6 +29,7 @@ php artisan vendor:publish
 
 ## 导出类用法
 //创建导出类
+```
 namespace Excel;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\Exportable;
@@ -60,9 +61,9 @@ class UsersExport implements FromCollection, WithHeadings
     }
 
 }
-
+```
 //创建导出方法
-
+```
 use Excel\UsersExport; //引用导出类
 use Maatwebsite\Excel\Facades\Excel;
 public function Export(){
@@ -78,10 +79,10 @@ public function Export(){
     ]; //execl 头部
     return Excel::download(new UsersExport($list, $headings), 'test.xlsx');
 }
-
+```
 ##5. 导入类用法
 //创建导入类
-
+```
 namespace Excel;
 
 use App\User; //user model 可以自行替换
@@ -100,9 +101,9 @@ class UsersImport implements ToCollection
         }
     }
 }
-
+``````
 //创建导入方法
-
+```
 use Excel\UsersImport; //引用导入类
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -110,7 +111,7 @@ use Maatwebsite\Excel\Facades\Excel;
         return Excel::import(new UsersImport, request()->file('your_file')); //此方法自动调导入类 collection 方法, file后面接全路径
         return $array = Excel::toArray(new UsersImport, 'users.xlsx');  //此方法将excel内容转换为数组输出。
    } 
-   
+```   
 //更多方法请查看官网地址
 
 //具体使用方法请查看官网地址 https://laravel-excel.com/
