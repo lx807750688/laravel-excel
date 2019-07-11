@@ -28,7 +28,7 @@ composer require maatwebsite/excel
 php artisan vendor:publish
 
 ## 导出类用法
-//创建导出类
+1. 创建导出类
 ```
 namespace Excel;
 use Maatwebsite\Excel\Concerns\FromCollection;
@@ -62,7 +62,7 @@ class UsersExport implements FromCollection, WithHeadings
 
 }
 ```
-//创建导出方法
+2. 创建导出方法
 ```
 use Excel\UsersExport; //引用导出类
 use Maatwebsite\Excel\Facades\Excel;
@@ -81,7 +81,7 @@ public function Export(){
 }
 ```
 ##5. 导入类用法
-//创建导入类
+1. 创建导入类
 ```
 namespace Excel;
 
@@ -102,7 +102,7 @@ class UsersImport implements ToCollection
     }
 }
 ``````
-//创建导入方法
+2. 创建导入方法
 ```
 use Excel\UsersImport; //引用导入类
 use Maatwebsite\Excel\Facades\Excel;
@@ -112,9 +112,9 @@ use Maatwebsite\Excel\Facades\Excel;
         return $array = Excel::toArray(new UsersImport, 'users.xlsx');  //此方法将excel内容转换为数组输出。
    } 
 ```   
-//更多方法请查看官网地址
+[更多方法请查看官网地址]
 
-//具体使用方法请查看官网地址 https://laravel-excel.com/
+## 具体使用方法请查看官网地址 https://laravel-excel.com/
 
           
 
