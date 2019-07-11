@@ -31,9 +31,11 @@ php artisan vendor:publish
 1. 创建导出类
 ```
 namespace Excel;
+
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\WithHeadings;
+
 class UsersExport implements FromCollection, WithHeadings
   {
   
@@ -66,6 +68,7 @@ class UsersExport implements FromCollection, WithHeadings
 ```
 use Excel\UsersExport; //引用导出类
 use Maatwebsite\Excel\Facades\Excel;
+
 public function Export(){
 
     $list = [
@@ -80,7 +83,7 @@ public function Export(){
     return Excel::download(new UsersExport($list, $headings), 'test.xlsx');
 }
 ```
-##5. 导入类用法
+## 导入类用法
 1. 创建导入类
 ```
 namespace Excel;
@@ -88,6 +91,7 @@ namespace Excel;
 use App\User; //user model 可以自行替换
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
+
 class UsersImport implements ToCollection
 {
 
